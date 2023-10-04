@@ -11,6 +11,7 @@ import androidx.navigation.navArgument
 import com.angelaxd.lab74.ui.categories.view.CategoriesScreen
 import com.angelaxd.lab74.ui.categories.view.CategoryDetail
 import com.angelaxd.lab74.ui.mealDetail.view.MealDetailScreen
+import com.angelaxd.lab74.ui.meals.view.mealsScreen
 
 @Composable
 fun AppNavigation() {
@@ -31,6 +32,18 @@ fun AppNavigation() {
             val idCategory= arguments.getString("id") ?:""
 
             MealDetailScreen(navController = navController, name = categoryName, id = idCategory )
+
+        }
+
+        composable(route= AppScreens.MealsScreen.route,
+            arguments = listOf(navArgument(name= "idFilter"){
+                type= NavType.StringType
+            }
+            )){backStackEntry->
+            val arguments = requireNotNull(backStackEntry.arguments)
+            val idFilter= arguments.getString("idFilter") ?:""
+
+            mealsScreen(navController = navController, id = idFilter )
 
         }
 

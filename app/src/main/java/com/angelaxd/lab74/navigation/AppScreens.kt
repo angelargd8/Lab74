@@ -7,8 +7,11 @@ sealed class AppScreens(val route: String){
       //  fun createRoute(category: String) = "segunda/$category"
     //}
 
-    object MealDetailScreen: AppScreens("tercera/{category}/{id}"){
-        fun createRoute(category: String, id: String) = "tercera/$category/$id"
+    object MealDetailScreen: AppScreens("segunda/{category}/{id}"){
+        fun createRoute(category: String, id: String) = "segunda/$category/$id"
     }
-    object MealsListScreen: AppScreens("cuarta")
+    //idFilter
+    object MealsScreen: AppScreens("cuarta/{idFilter}"){
+        fun createRoute(id: String) = "cuarta/$id"
+    }
 }

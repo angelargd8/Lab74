@@ -25,6 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.angelaxd.lab74.navigation.AppScreens
 import com.angelaxd.lab74.ui.mealDetail.viewmodel.MealDetailViewModel
 import com.angelaxd.lab74.ui.objetos.Texto
 
@@ -58,7 +59,11 @@ fun MealDetailScreen(
                             Card(modifier = Modifier
                                 .padding(10.dp)
                                 .fillMaxWidth()
-                                .clickable { },
+                                .clickable {
+                                    navController.navigate(AppScreens.MealsScreen.createRoute(idFilter)) {
+                                        launchSingleTop = true
+                                    }
+                                },
                                 shape = RoundedCornerShape(6.dp)
 
                             ) {

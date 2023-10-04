@@ -40,3 +40,23 @@ fun Texto(texto: String){
     )
 
 }
+
+@Composable
+fun TextoDescripcion(texto: String){
+
+    Text(
+        text = texto,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(15.dp),
+        //modifier = Modifier.padding()
+        //modifier = Modifier.wrapContentHeight(),
+        fontSize = 15.sp,
+        color = Color(0xFF6200EE),
+        //fontWeight= FontWeight.Bold, //grosor del texto
+        fontStyle = FontStyle.Normal, //estilo (normal, cursiva..)
+        lineHeight = 17.sp, //altura de linea del texto
+        overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
+    )
+
+}

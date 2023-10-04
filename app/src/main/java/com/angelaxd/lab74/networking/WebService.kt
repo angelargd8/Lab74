@@ -2,6 +2,7 @@ package com.angelaxd.lab74.networking
 
 import com.angelaxd.lab74.networking.dto.CategoriesDto
 import com.angelaxd.lab74.networking.dto.FilterDto
+import com.angelaxd.lab74.networking.dto.MealsDto
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -28,10 +29,15 @@ class MealWebService {
 
     //filter
     suspend fun getMealsFilter():FilterDto{
-        //se manda a llamar los filters "(categories.php)"
+        //se manda a llamar los filters
         return api.getFilter()
     }
 
+    //lookUp
+    suspend fun getLookUp(): MealsDto {
+        //se manda a llamar al lookup
+        return api.getLookUp()
+    }
 
 
 }
