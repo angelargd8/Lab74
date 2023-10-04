@@ -7,6 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.angelaxd.lab74.ui.objetos.Texto
 
+/**
+ *
+ *
+ *      ESTE ARCHIVO NO TIENE NADA SOLO
+ *      ERA DE PRUEBA :)
+ *
+ *
+ *
+ *
+ *
+ * **/
+
 //id: String?, str: String?, description: String?, thumb: String?
 @Composable
 fun CategoryDetail(
@@ -17,7 +29,7 @@ fun CategoryDetail(
 
     Log.d(ContentValues.TAG, "---BANDERAAAAAAAAAAA---");
     Log.d(ContentValues.TAG, id.toString());
-    Texto("Category Detail")
+    //Texto("Category Detail")
     //comprobarque existe
     id?.let {
         Texto(id)

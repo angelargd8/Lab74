@@ -1,6 +1,7 @@
 package com.angelaxd.lab74.networking
 
 import com.angelaxd.lab74.networking.dto.CategoriesDto
+import com.angelaxd.lab74.networking.dto.FilterDto
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,11 +20,18 @@ class MealWebService {
         //se guarda en api
         api = retrofit.create(MealsApi::class.java)
     }
-
+    //categories
     suspend fun getMealsCategories():CategoriesDto{
         //se manda a llamar las categorias "(categories.php)"
         return api.getCategories()
     }
+
+    //filter
+    suspend fun getMealsFilter():FilterDto{
+        //se manda a llamar los filters "(categories.php)"
+        return api.getFilter()
+    }
+
 
 
 }

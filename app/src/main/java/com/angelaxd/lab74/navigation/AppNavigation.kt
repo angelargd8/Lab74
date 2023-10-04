@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.angelaxd.lab74.ui.categories.view.CategoriesScreen
 import com.angelaxd.lab74.ui.categories.view.CategoryDetail
+import com.angelaxd.lab74.ui.mealDetail.view.MealDetailScreen
 
 @Composable
 fun AppNavigation() {
@@ -17,19 +18,19 @@ fun AppNavigation() {
 
     NavHost(navController = navController, startDestination = AppScreens.CategoriesScreen.route){
         composable(route= AppScreens.CategoriesScreen.route){
-            //AppScreens.MealSListScreen(navController)
             CategoriesScreen(navController)
         }
 
-        composable(route= AppScreens.CategoryDetail.route,
+        composable(route= AppScreens.MealDetailScreen.route,
             arguments = listOf(navArgument(name= "category"){
                 type= NavType.StringType
             }
             )){backStackEntry->
             val arguments = requireNotNull(backStackEntry.arguments)
             val categoryName= arguments.getString("category") ?:""
-            CategoryDetail(navController = navController, id = categoryName)
+            val idCategory= arguments.getString("id") ?:""
 
+            MealDetailScreen(navController = navController, name = categoryName, id = idCategory )
 
         }
 

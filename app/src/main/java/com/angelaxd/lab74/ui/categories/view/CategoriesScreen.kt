@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -66,7 +67,7 @@ fun CategoriesScreen(navController: NavHostController) {
                         .padding(10.dp)
                         .fillMaxWidth()
                         .clickable {
-                            navController.navigate(AppScreens.CategoryDetail.createRoute(str)) {
+                            navController.navigate(AppScreens.MealDetailScreen.createRoute(str,id)) {
                                 launchSingleTop = true
                             }
                         },
@@ -88,6 +89,7 @@ fun CategoriesScreen(navController: NavHostController) {
                                     fontSize = 15.sp,
                                     fontWeight= FontWeight.Bold, //grosor del texto
                                     fontStyle = FontStyle.Italic, //estilo (normal, cursiva..)
+                                    color = Color(0xFF6200EE),
                                     lineHeight = 20.sp, //altura de linea del texto
                                     overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
                                 )
