@@ -1,4 +1,4 @@
-package com.angelaxd.lab74.ui.theme.ui.categories.viewmodel
+package com.angelaxd.lab74.ui.categories.viewmodel
 
 data class Category(
     val idCategory: String,

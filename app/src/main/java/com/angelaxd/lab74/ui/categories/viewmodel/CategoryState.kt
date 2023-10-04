@@ -1,6 +1,6 @@
-package com.angelaxd.lab74.ui.theme.ui.categories.viewmodel
+package com.angelaxd.lab74.ui.categories.viewmodel
 
-import com.angelaxd.lab74.ui.theme.networking.dto.CategoriesDto
+import com.angelaxd.lab74.networking.dto.CategoriesDto
 
 data class CategoryState(
     /*val isLoading: Boolean = false,

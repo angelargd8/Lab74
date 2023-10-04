@@ -1,6 +1,6 @@
-package com.angelaxd.lab74.ui.theme.networking.dto
+package com.angelaxd.lab74.networking.dto
 
-import com.angelaxd.lab74.ui.theme.ui.categories.viewmodel.Category
+import com.angelaxd.lab74.ui.categories.viewmodel.Category
 
 data class CategoryDto(
     val idCategory: String,
