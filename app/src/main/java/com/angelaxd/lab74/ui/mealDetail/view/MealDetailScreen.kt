@@ -4,9 +4,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,6 +30,7 @@ import coil.request.ImageRequest
 import com.angelaxd.lab74.navigation.AppScreens
 import com.angelaxd.lab74.ui.mealDetail.viewmodel.MealDetailViewModel
 import com.angelaxd.lab74.ui.objetos.Texto
+import com.angelaxd.lab74.ui.objetos.TopBar
 
 @Composable
 fun MealDetailScreen(
@@ -41,8 +44,9 @@ fun MealDetailScreen(
     val filters = viewModel.MealDetailState.value
 
     Column {
-        Spacer(modifier = Modifier.height(10.dp))
-        Texto("Meals Details")
+        //Spacer(modifier = Modifier.height(10.dp))
+        TopBar(navController,"Meals Details" )
+        //Texto("Meals Details")
         id?.let {
             Texto(name.toString())
 
@@ -75,8 +79,10 @@ fun MealDetailScreen(
                                             .size(299,299)
                                             .build()
                                         ,
-                                        contentDescription = "imagen jaja"
+                                        contentDescription = "imagen jaja",
+                                        modifier= Modifier.fillMaxHeight()
                                     )
+                                    Spacer(modifier = Modifier.width(8.dp))
                                     Column {
                                         Text(text =nombre,
                                             fontSize = 15.sp,
@@ -101,7 +107,7 @@ fun MealDetailScreen(
 
             }else{
                 Text(text ="  no hay información acerca de esta categoria",
-                    fontSize = 10.sp,
+                    fontSize = 15.sp,
                     color = Color(0xFFE91E63),
                     overflow = TextOverflow.Ellipsis //como se maneja el desbordamiento
                 )

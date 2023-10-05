@@ -38,6 +38,7 @@ import coil.request.ImageRequest
 import com.angelaxd.lab74.navigation.AppScreens
 import com.angelaxd.lab74.ui.categories.viewmodel.CategoryViewModel
 import com.angelaxd.lab74.ui.objetos.Texto
+import com.angelaxd.lab74.ui.objetos.TopBar
 
 
 @Composable
@@ -49,8 +50,9 @@ fun CategoriesScreen(navController: NavHostController) {
     val categories= viewModel.categoriesState.value
 
     Column {
-        Texto("Categorias")
-        Spacer(modifier =Modifier.height(10.dp))
+        TopBar(navController,"Categories" )
+        //Texto("Categorias")
+        //Spacer(modifier =Modifier.height(10.dp))
 
         LazyColumn(modifier = Modifier.fillMaxWidth()){
 
