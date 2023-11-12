@@ -1,3 +1,3 @@
-# Lab74
+# Lab10
 # Vídeo: 
-- https://youtube.com/shorts/5vndyf1TQmw
+- https://youtu.be/b5kWs2O1NTY
